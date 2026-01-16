@@ -54,3 +54,26 @@
 //     alert('invalid amount. Please try again.');
 // }
 // alert(`You got ${dis*100}% discount and your final payable amount is ${amount-(amount*dis)}`);
+
+// ---Electricity Bill---
+// upto 100 => 4.2rs. per unit
+// 101-200 => 6rs.per unit,
+// 201-400 => 8rs.per unit,
+// more than 400 => 13rs. per unit
+
+let unit = Number(prompt('Enter number of units used a month:'));
+if(unit>=0&&unit<=100){
+    alert(`Your per unit cost is Rs.${4.2} and your payable amount is Rs.${unit*4.2}`);
+}
+else if(unit>100&&unit<=200){
+    alert(`Your payable amount is Rs.${(4.2*100)+((unit-100)*6)}`);
+}
+else if(unit>200&&unit<=400){
+    alert(`Your payable amount is Rs.${(4.2*100)+((6*100)+((unit-200)*8))}`);
+}
+else if(unit>400){
+    alert(`Your payable amount is Rs.${(4.2*100)+(6*100)+(8*200)+((unit-400)*13)}`);
+}
+else{
+    alert('Invalid number.')
+}
